@@ -45,12 +45,6 @@
     });
 
 
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 5,
-        time: 2000
-    });
-
 
     // Back to top button
     $(window).scroll(function () {
@@ -64,6 +58,16 @@
         $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
+
+
+    var typed = new Typed('#typed-text', {
+        strings: ['código.','Processo.','Projeto.','O que você precisa!'],
+        typeSpeed: 150,
+        backSpeed: 0,
+        showCursor: true,
+        cursorChar: '|',
+        loop: true
+      });
 
 
 })(jQuery);
