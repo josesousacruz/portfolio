@@ -48,12 +48,31 @@
       top: 0;
       left: 0;
       right: 0;
+      background: transparent;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    .header.scrolled {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  
+    .header .nav-link,
+    .header h1 {
+      color: white;
+      transition: color 0.3s ease;
+    }
+  
+    .header.scrolled .nav-link,
+    .header.scrolled h1 {
+      color: black;
     }
   
     main {
       margin-top: 120px;
     }
   </style>
+  
   <!-- ======= Header ======= --> 
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between w-100" >
@@ -66,14 +85,15 @@
      
         <div class="w-100 align-items-center mt-2">
 
-          <ul class="nav-menu d-flex list-unstyled backgroud justify-content-center" >
-            <li class="nav-item m-2"><a href="index.html" class="nav-link text-white">Início</a></li>
-            <li class="nav-item m-2"><a href="" class="nav-link text-white">Sobre</a></li>
-            <li class="nav-item m-2"><a href="" class="nav-link text-white">Serviços</a></li>
-            <li class="nav-item m-2"><a href="" class="nav-link text-white">Projetos</a></li>
-            <li class="nav-item m-2"><a href="" class="nav-link text-white">Blog</a></li>
-            <li class="nav-item m-2"><a href="" class="nav-link text-white">Contato</a></li>
+          <ul class="nav-menu d-flex list-unstyled backgroud justify-content-center">
+            <li class="nav-item m-2"><a href="index.html" class="nav-link">Início</a></li>
+            <li class="nav-item m-2"><a href="about.html" class="nav-link">Sobre</a></li>
+            <li class="nav-item m-2"><a href="services.html" class="nav-link">Serviços</a></li>
+            <li class="nav-item m-2"><a href="projects.html" class="nav-link">Projetos</a></li>
+            <li class="nav-item m-2"><a href="blog.html" class="nav-link">Blog</a></li>
+            <li class="nav-item m-2"><a href="contact.html" class="nav-link">Contato</a></li>
           </ul>
+          
         
         </div>
 
@@ -1077,6 +1097,17 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+  
 </body>
 
 </html>
