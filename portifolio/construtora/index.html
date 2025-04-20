@@ -64,12 +64,33 @@
     }
   
     .header.scrolled .nav-link,
-    .header.scrolled h1 {
+    .header.scrolled h1,
+    .header.scrolled i {
       color: black;
     }
   
     main {
       margin-top: 120px;
+    }
+
+    @media (min-width: 992px) {
+      .nav-menu {
+        display: flex !important;
+      }
+      #navbar,
+      .mobile-nav-toggle {
+        display: none !important;
+      }
+    }
+  
+    @media (max-width: 991px) {
+      .nav-menu {
+        display: none !important;
+      }
+      #navbar,
+      .mobile-nav-toggle {
+        display: block !important;
+      }
     }
   </style>
   
@@ -99,9 +120,43 @@
 
 
       <!-- .navbar -->
+       
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <!-- <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i> -->
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- .navbar -->
 
     </div>
   </header>
+
   <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
@@ -110,12 +165,9 @@
     <div class="info d-flex align-items-center">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
+          <div class="col-lg-6 text-center mt-5">
             <h2 data-aos="fade-down">Bem-vindo à <span>UpSolar</span></h2>
-            <p data-aos="fade-up">Somos especialistas em soluções de energia solar fotovoltaica, 
-              oferecendo instalações profissionais e personalizadas para residências e empresas. 
-              Com nossa experiência e compromisso com a qualidade, ajudamos você a reduzir seus custos 
-              com energia elétrica enquanto contribui para um futuro mais sustentável.</p>
+            <p data-aos="fade-up">Energia solar: investimento inteligente para um futuro sustentável.</p>
             <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Comece Agora</a>
           </div>
         </div>
